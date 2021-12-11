@@ -36,11 +36,12 @@
 		DbSet<Entity> - a collection of model classes, aka 'entity classes' or
 			'domain model classes' that map to a database table
 
-*	Create a DbContext Class and seed initial data
+*	TODO: Create a DbContext Class and seed initial data
 
 **	Added a connection string to the appsettings.json file
 **	Enabled dependency injection in the Startup class
 
+TODO:
 ***** Create the Database *****
 	Select the Tools / NuGet Package Manager / Package Manager Console command
 	Make sure the connection string and dependency injection are set up
@@ -49,7 +50,7 @@
 		
 
 ******** TODO ********
-search files to TODO comments to fix code names, etc.
+search files for TODO comments to fix code names, etc.
 
 
 

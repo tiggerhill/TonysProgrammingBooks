@@ -6,9 +6,6 @@ namespace TonysProgrammingBooks.Controllers
 {
     public class BookController : Controller
     {
-
-        // Page 151
-
         private BookContext context { get; set; }
         public BookController(BookContext ctx)
         {
