@@ -20,10 +20,20 @@
         <input asp-for="BookAuthor" class="form-control" />
     </div>
 
+    <div class="form-group">
+        <label asp-for="LanguageId">Select a Language:</label>
+        <select asp-for="LanguageId" class="form-control">
+            @foreach (Language l in ViewBag.Languages)
+            {
+                <option value="@l.LanguageId">@l.LanguageName</option>
+            }
+        </select>
+    </div>
+
     <input type="hidden" asp-for="BookId" />
 
-    <button type="submit" class="btn alert-primary">Save</button>
-    <a asp-controller="Home" asp-action="Index" class="btn alert-primary">Cancel</a>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
 </form>
 
 

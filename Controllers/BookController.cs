@@ -24,6 +24,7 @@ namespace TonysProgrammingBooks.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
+            ViewBag.Languages = context.Languages.OrderBy(l => l.LanguageName).ToList();
             var book = context.Books.Find(id);
             return View(book);
         }
@@ -46,7 +47,8 @@ namespace TonysProgrammingBooks.Controllers
             }
             else
             {
-                ViewBag.Action = (book.BookId == 0) ? "Add" : "Edit";
+                ViewBag.Action = (book.BookId == 0) ? "Add": "Edit";
+                ViewBag.Languages = context.Languages.OrderBy(l => l.LanguageName).ToList();
                 return View(book);
             }
         }

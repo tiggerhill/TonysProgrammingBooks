@@ -1,9 +1,7 @@
 ﻿@model List<Book>
 @{
-    ViewBag.Title = "Empty MVC Template";
+    ViewBag.Title = "Tony's Programming Books";
 }
-
-<h2>Tony's Programming Books</h2>
 
 <a asp-controller="Book" asp-action="Add">Add New Book</a>
 <table class="table table-bordered table-striped">
@@ -21,7 +19,7 @@
             <tr>
                 <td>@book.BookTitle</td>
                 <td>@book.BookAuthor</td>
-                <td>@book.LanguageId</td>
+                <td>@book.Language.LanguageName</td>
                 <td>
                     @*this edits the url to add either Edit or Delete AND BookId at the end*@
                     <a asp-controller="Book" asp-action="Edit" asp-route-id="@book.BookId">Edit</a>

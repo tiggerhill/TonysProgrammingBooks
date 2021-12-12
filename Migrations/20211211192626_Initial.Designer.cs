@@ -9,7 +9,7 @@ using TonysProgrammingBooks.Models;
 namespace TonysProgrammingBooks.Migrations
 {
     [DbContext(typeof(BookContext))]
-    [Migration("20211209185653_Initial")]
+    [Migration("20211211192626_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,9 +35,6 @@ namespace TonysProgrammingBooks.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LanguageId")
-                        .HasColumnType("int");
-
                     b.HasKey("BookId");
 
                     b.ToTable("Books");
@@ -47,30 +44,7 @@ namespace TonysProgrammingBooks.Migrations
                         {
                             BookId = 1,
                             BookAuthor = "Delamater and Murach",
-                            BookTitle = "Murach's ASP.NET Core MVC",
-                            LanguageId = 1
-                        });
-                });
-
-            modelBuilder.Entity("TonysProgrammingBooks.Models.Language", b =>
-                {
-                    b.Property<int>("LanguageId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("LanguageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("LanguageId");
-
-                    b.ToTable("Languages");
-
-                    b.HasData(
-                        new
-                        {
-                            LanguageId = 1,
-                            LanguageName = "C#"
+                            BookTitle = "Murach's ASP.NET Core MVC"
                         });
                 });
 #pragma warning restore 612, 618

@@ -11,11 +11,14 @@ namespace TonysProgrammingBooks.Models
         public DbSet<Book> Books { get; set; }
         public DbSet<Language> Languages { get; set; }
 
-        // DONE:  rename ClassContext, ClasssModel, Items as appropriate
-
-        // EXAMPLE of how to Seed Data:
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Language>().HasData(
+                new Language 
+                { 
+                    LanguageId = 1, LanguageName = "C#" 
+                });
+
             modelBuilder.Entity<Book>().HasData(
                 new Book
                 {
@@ -23,9 +26,7 @@ namespace TonysProgrammingBooks.Models
                     BookTitle = "Murach's ASP.NET Core MVC",
                     BookAuthor = "Delamater and Murach",
                     LanguageId = 1
-                });
-            modelBuilder.Entity<Language>().HasData(
-                new Language { LanguageId = 1, LanguageName = "C#" });
+                }); 
         }
     }
 }
